@@ -5,18 +5,28 @@ var current_character: Node3D
 var chairs
 var current_chair: Node3D
 
+var highlightMaterial: ShaderMaterial
+var hoverMaterial: ShaderMaterial 
+
 # Upon entering the state, we set the Player node's velocity to zero.
 func enter(_msg := {}) -> void:
 	if !_msg.has("character"):
 		state_machine.transition_to("idle")
 		return
 	current_character = _msg.character
+	highlightMaterial = load("res://Materials/outlineHover.tres")
+	hoverMaterial = load("res://Materials/outlineSelect.tres")
+	var material = current_character.get_node("StaticBody/Mesh") as MeshInstance3D
+	material.material_overlay = hoverMaterial
 	chairs = get_tree().get_nodes_in_group("chairs")
 	connect_chairs()
 	highlight_chairs()
 
 func exit():
 	disconnect_chairs()
+	unhighlight_chairs()
+	var material = current_character.get_node("StaticBody/Mesh") as MeshInstance3D
+	material.material_overlay = null
 	current_chair = null
 	current_character = null
 
@@ -52,15 +62,22 @@ func disconnect_chairs():
 	
 func on_chair_hovered(chair):
 	current_chair = chair
-	pass
+	chair.get_node("StaticBody/Mesh").material_overlay = hoverMaterial
 
 func on_chair_unhovered(chair):
 	current_chair = null
-	pass
+	chair.get_node("StaticBody/Mesh").material_overlay = highlightMaterial
 
-func highlight_chair():
-	pass
+func highlight_chair(chair):
+	chair.get_node("StaticBody/Mesh").material_overlay = highlightMaterial
 
 func highlight_chairs():
-	pass
-		
+	for chair in chairs:
+		highlight_chair(chair)
+
+func unhighlight_chair(chair):
+		chair.get_node("StaticBody/Mesh").material_overlay = null
+
+func unhighlight_chairs():
+	for chair in chairs:
+		unhighlight_chair(chair)

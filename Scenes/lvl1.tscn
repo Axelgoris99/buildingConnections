@@ -66,14 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.632473, 0.49436, 1.199)
 [node name="test" parent="Characters" instance=ExtResource("4_8h0n1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52799, 0.49436, 1.199)
 
-[node name="currentState" type="RichTextLabel" parent="."]
-offset_left = 22.0
-offset_top = 13.0
-offset_right = 245.0
-offset_bottom = 69.0
-
-[node name="Control" parent="." node_paths=PackedStringArray("current_state_label") groups=["managers"] instance=ExtResource("4_nw5os")]
-current_state_label = NodePath("../currentState")
+[node name="Control" parent="." groups=["managers"] instance=ExtResource("4_nw5os")]
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(0.775519, -0.276301, 0.567651, 0, 0.899144, 0.437654, -0.631324, -0.339409, 0.697303, 3.29752, 3.15479, 6.04196)

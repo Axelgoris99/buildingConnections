@@ -16,9 +16,13 @@ func exit():
 
 func on_character_hovered(character: Node3D):
 	_character = character
+	var material = character.get_node("StaticBody/Mesh") as MeshInstance3D
+	material.material_overlay = load("res://Materials/outlineHover.tres")
 	
 func on_character_unhovered(character: Node3D):
 	_character = null
+	var material = character.get_node("StaticBody/Mesh") as MeshInstance3D
+	material.material_overlay = null
 
 func handle_input(event):
 	if(Input.is_action_just_released("confirm")):
