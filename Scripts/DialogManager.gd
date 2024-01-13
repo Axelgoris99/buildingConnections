@@ -1,24 +1,6 @@
 class_name DialogManager
 extends Node
 
-var timeline : DialogicTimeline = DialogicTimeline.new()
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _input(event: InputEvent):
-# Check if a dialog is already running
-	if Dialogic.current_timeline != null:
-		return
-	if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
-		Dialogic.start('pirate_timeline')
-		get_viewport().set_input_as_handled()
-
 # Method to run the dialog for a given character.
 # The character will give information only on given objects.
 func run_dialog(character : Character, likes : Array, dislikes : Array):

@@ -4,9 +4,11 @@ extends State
 var current_character: Node3D
 var chairs
 var current_chair: Node3D
+
 # Upon entering the state, we set the Player node's velocity to zero.
 func enter(_msg := {}) -> void:
 	if !_msg.has("character"):
+		state_machine.transition_to("idle")
 		return
 	current_character = _msg.character
 	chairs = get_tree().get_nodes_in_group("chairs")
@@ -18,12 +20,12 @@ func exit():
 	current_chair = null
 	current_character = null
 
-func _input(event):
-	if(Input.is_action_just_pressed("interact")):
+func handle_input(event):
+	if(Input.is_action_just_released("interact")):
 		state_machine.transition_to("idle")
 	if(!current_chair):
 		return
-	if(Input.is_action_just_pressed("select")):
+	if(Input.is_action_just_released("select")):
 		place_character()
 
 func place_character():

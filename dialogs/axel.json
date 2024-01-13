@@ -1,5 +1,5 @@
 {
-  "character": "pirate",
+  "character": "axel",
   "intro": [
 	{
 	  "value": "Hello there!"
@@ -16,8 +16,8 @@
   ],
   "dislikes": [
 	{
-	  "object": "sharks",
-	  "text": "I hate [color=red]sharks[/color]."
+	  "object": "coconut",
+	  "text": "I hate [color=red]coconut[/color]."
 	}
   ]
 }

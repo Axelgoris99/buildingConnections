@@ -2,9 +2,6 @@ class_name Character
 extends Node
 
 var current_chair
-var likes = []
-var dislikes = []
-@export var display_name: String = "test"
 func set_chair(chair):
 	current_chair = chair
 	current_chair.set_character(self)
@@ -14,6 +11,10 @@ func remove_chair():
 		return
 	current_chair.set_character(null)
 	current_chair = null
+
+var likes = []
+var dislikes = []
+@export var display_name: String = "test"
 
 # Path to the character's profile, .dch file
 var profile_path : String = ""
