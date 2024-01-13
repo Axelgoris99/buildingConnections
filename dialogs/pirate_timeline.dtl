@@ -1,6 +1,0 @@
-join Pirate 1
-pirate: What a nice bar you got there!
-pirate: {Characters.Pirate.Likes.Beer}
-pirate: {Characters.Pirate.Dislikes.Sharks}
-leave Pirate
-[end_timeline]

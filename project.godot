@@ -26,24 +26,12 @@ directories/dch_directory={
 "pirate": "res://dialogs/pirate.dch"
 }
 directories/dtl_directory={
-"pirate_timeline": "res://dialogs/pirate_timeline.dtl",
 "timeline_test": "res://dialogs/timeline_test.dtl"
 }
 layout/style_list=["res://dialogs/like.tres", "res://dialogs/SpeakerTextBox.tres"]
 layout/default_style="res://dialogs/like.tres"
 glossary/default_case_sensitive=true
-variables={
-"Characters": {
-"Pirate": {
-"Dislikes": {
-"Sharks": "Cursed sharks! Can't stand the sight of 'em, the true nemeses of us pirates!"
-},
-"Likes": {
-"Beer": "Yo ho ho! One of me all-time faves? Gotta be that sweet, golden rhum – makes me pirate heart dance with delight, it does!"
-}
-}
-}
-}
+variables={}
 glossary/glossary_files=["res://dialogs/glossary.tres"]
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
