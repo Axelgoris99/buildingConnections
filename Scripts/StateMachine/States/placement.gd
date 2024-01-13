@@ -27,8 +27,9 @@ func _input(event):
 		place_character()
 
 func place_character():
+	current_character.remove_chair()
 	current_character.global_position = current_chair.global_position
-	current_chair.set_character(current_character)
+	current_character.set_chair(current_chair)
 	state_machine.transition_to("idle")
 
 func connect_chairs():

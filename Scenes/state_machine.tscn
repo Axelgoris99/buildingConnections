@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6rk0ghiesos0"]
+[gd_scene load_steps=7 format=3 uid="uid://b6rk0ghiesos0"]
 
 [ext_resource type="Script" path="res://Scripts/StateMachine/stateMachine.gd" id="1_4i6j8"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/States/initialization.gd" id="2_8c2gt"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/States/placement.gd" id="3_np6ty"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/States/idle.gd" id="4_etsp2"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/States/dialog.gd" id="5_50uam"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/States/score.gd" id="6_ywprm"]
 
 [node name="StateMachine" type="Node"]
 script = ExtResource("1_4i6j8")
@@ -28,6 +29,9 @@ script = ExtResource("4_etsp2")
 
 [node name="dialog" type="Node" parent="."]
 script = ExtResource("5_50uam")
+
+[node name="score" type="Node" parent="."]
+script = ExtResource("6_ywprm")
 
 [connection signal="timeout" from="initialization/InitTimer" to="initialization" method="_on_init_timer_timeout"]
 [connection signal="timeout" from="placement/PlacementTimer" to="placement" method="_on_timer_timeout"]

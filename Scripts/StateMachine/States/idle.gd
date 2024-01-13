@@ -5,6 +5,8 @@ var _character: Node3D
 var characters
 # Upon entering the state, we set the Player node's velocity to zero.
 func enter(_msg := {}) -> void:
+	print("idle")
+	_character = null
 	characters = get_tree().get_nodes_in_group("characters")
 	connect_characters_colliders()
 	
@@ -19,6 +21,8 @@ func on_character_unhovered(character: Node3D):
 	_character = null
 
 func _input(event):
+	if(Input.is_action_just_pressed("confirm")):
+		state_machine.transition_to("score")
 	if(!_character):
 		return
 	if(Input.is_action_just_pressed("select")):
