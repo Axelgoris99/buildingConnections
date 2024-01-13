@@ -40,16 +40,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424161, 0.186844, -1.12075
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0650053, 0, -0.644445)
 
 [node name="Character" parent="Characters" instance=ExtResource("4_8h0n1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57945, 0.49436, 1.199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30581, 0, 0)
 
 [node name="Character2" parent="Characters" instance=ExtResource("4_8h0n1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451987, 0.49436, 1.199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.274374, 0, 0)
 
 [node name="Character3" parent="Characters" instance=ExtResource("4_8h0n1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.632473, 0.49436, 1.199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35883, 0, 0)
 
 [node name="Character4" parent="Characters" instance=ExtResource("4_8h0n1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52799, 0.49436, 1.199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801632, 0, 0)
 
 [node name="Control" parent="." instance=ExtResource("4_nw5os")]
 

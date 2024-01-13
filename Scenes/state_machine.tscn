@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6rk0ghiesos0"]
+
+[ext_resource type="Script" path="res://Scripts/StateMachine/stateMachine.gd" id="1_4i6j8"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/States/initialization.gd" id="2_8c2gt"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/States/placement.gd" id="3_np6ty"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/States/idle.gd" id="4_etsp2"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/States/dialog.gd" id="5_50uam"]
+
+[node name="StateMachine" type="Node"]
+script = ExtResource("1_4i6j8")
+initial_state = NodePath("initialization")
+
+[node name="initialization" type="Node" parent="."]
+script = ExtResource("2_8c2gt")
+
+[node name="InitTimer" type="Timer" parent="initialization"]
+one_shot = true
+autostart = true
+
+[node name="placement" type="Node" parent="."]
+script = ExtResource("3_np6ty")
+
+[node name="PlacementTimer" type="Timer" parent="placement"]
+one_shot = true
+
+[node name="idle" type="Node" parent="."]
+script = ExtResource("4_etsp2")
+
+[node name="dialog" type="Node" parent="."]
+script = ExtResource("5_50uam")
+
+[connection signal="timeout" from="initialization/InitTimer" to="initialization" method="_on_init_timer_timeout"]
+[connection signal="timeout" from="placement/PlacementTimer" to="placement" method="_on_timer_timeout"]

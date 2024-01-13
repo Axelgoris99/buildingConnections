@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhj08y55qkfvk"]
+
+[ext_resource type="Script" path="res://Scripts/chair.gd" id="1_2kl6t"]
+[ext_resource type="Material" uid="uid://c66ddij0yv1df" path="res://Materials/Chair.tres" id="2_bei03"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cqevo"]
+size = Vector3(0.599548, 0.711914, 0.641357)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ikmad"]
+
+[node name="Chair" type="Node3D" groups=["chairs"]]
+script = ExtResource("1_2kl6t")
+
+[node name="StaticBody" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323181, -0.061558, 0.00695801)
+shape = SubResource("BoxShape3D_cqevo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = ExtResource("2_bei03")
+mesh = SubResource("BoxMesh_ikmad")
