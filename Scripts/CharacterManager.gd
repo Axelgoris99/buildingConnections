@@ -1,0 +1,55 @@
+class_name CharacterManager
+extends Node
+
+@export var dialog_manager : DialogManager
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var pirate_character 
+	pirate_character = get_node("Character") as Character
+	init_character(pirate_character, "pirate")
+	dialog_manager.run_dialog(pirate_character, ["rhum"], ["sharks"])
+	pirate_character.add_known_objects(["rhum","sharks"])
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+# Initialise the given character likes, dislikes, and dialogue texts associated by reading the JSON file
+func init_character(character : Character, character_name : String):
+	var dialog_events = {}
+	var json = JSON.new()
+	var dialog_file = FileAccess.open("res://dialogs/" + character_name + ".json", FileAccess.READ) # Fixme better path access?
+	var json_string = dialog_file.get_as_text()
+	var error = json.parse(json_string)
+	if error == OK:
+		var data_received = json.data
+		if typeof(data_received) == TYPE_DICTIONARY:
+			print(data_received) # Prints array
+			# At this point all dialog events of the character are stored in the distionary data_received
+			# Now we need to split them into intro, likes and dislikes
+			# Register intro events
+			var intro_dialog_events : Array = []
+			var likes_dialog_events : Dictionary = {}
+			var dislikes_dialog_events : Dictionary = {}			
+			for intro_event in data_received["intro"]:
+				intro_dialog_events.append(intro_event["value"])
+			print("intro dialog found: ", intro_dialog_events.size())
+			# Register likes events
+			for likes_event in data_received["likes"]:
+				likes_dialog_events[likes_event["object"]] = likes_event["text"]
+			# Register dislikes events
+			for dislikes_event in data_received["dislikes"]:
+				dislikes_dialog_events[dislikes_event["object"]] = dislikes_event["text"]		
+			# Register objects and dialog events in the character
+			character.intro_dialog_events = intro_dialog_events
+			character.likes_dialog_events = likes_dialog_events
+			character.dislikes_dialog_events = dislikes_dialog_events
+
+		else:
+			print("Unexpected data of type ", typeof(data_received))
+	else:
+		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+

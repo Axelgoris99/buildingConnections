@@ -1,0 +1,15 @@
+join Axel 1
+[style name="Default"]
+Axel: Hello there!
+Axel: I am Axel, [wave]nice to meet you![/wave] I like game programming, it is so fun!
+[style name="SpeakerTextBox"]
+Axel: Bouhhhh!
+Axel: I like this. Now tricky question\:
+- Cats
+	Axel: You're definitely a good person!
+- Dogs
+	Axel: No way! I love [color=yellow][b]dogs[/b][/color] too!
+- None
+	Axel: Your life must be so sad...
+do 
+[end_timeline]
