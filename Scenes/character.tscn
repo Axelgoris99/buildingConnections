@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7asskj28hkt"]
+
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_jlsor"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wdbyf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e0d4w"]
+
+[node name="Character" type="Node3D" groups=["characters"]]
+script = ExtResource("1_jlsor")
+
+[node name="StaticBody" type="StaticBody3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="StaticBody"]
+shape = SubResource("CapsuleShape3D_wdbyf")
+
+[node name="Mesh" type="MeshInstance3D" parent="StaticBody"]
+mesh = SubResource("CapsuleMesh_e0d4w")
+skeleton = NodePath("../../../Bar")

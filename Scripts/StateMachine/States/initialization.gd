@@ -1,9 +1,16 @@
 # initialization.gd
 extends State
 
-# Upon entering the state, we set the Player node's velocity to zero.
 func enter(_msg := {}) -> void:
-	print("Hello")
+	score_csv()
+	handle_taste_characters()
+	state_machine.transition_to("idle")
 
-func handle_input(_event: InputEvent):
-	state_machine.transition_to("Placement")
+func score_csv():
+	var node = CsvScore.new()
+	node.set_name("csv_score")
+	node.add_to_group("csv")
+	add_child(node)
+
+func handle_taste_characters():
+	pass
