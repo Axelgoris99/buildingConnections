@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch7opybijq84q"]
+
+[ext_resource type="Script" path="res://Scripts/level_selection.gd" id="1_1lxxo"]
+
+[sub_resource type="Gradient" id="Gradient_1nwq3"]
+offsets = PackedFloat32Array(0, 0.653226, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.599462, 0.599462, 0.599462, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yjn2i"]
+gradient = SubResource("Gradient_1nwq3")
+width = 128
+height = 128
+use_hdr = true
+fill_from = Vector2(0.423077, 0.247863)
+fill_to = Vector2(0, 1)
+
+[node name="LevelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1lxxo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(53, -304)
+scale = Vector2(1146.5, 645.5)
+texture = SubResource("GradientTexture2D_yjn2i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -273.0
+offset_top = -98.0
+offset_right = 272.0
+offset_bottom = 123.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="lvl1" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Level 1"
+
+[node name="lvl2" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Level 2"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="lvl3" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Level 3"
+
+[node name="lvl4" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Level 4"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = -495.0
+offset_top = -280.0
+offset_right = -150.0
+offset_bottom = -203.0
+theme_override_font_sizes/normal_font_size = 46
+text = "Level Selector"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -523.0
+offset_top = 225.0
+offset_right = -350.0
+offset_bottom = 281.0
+text = "Back to Main menu"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/lvl4" to="." method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

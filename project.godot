@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="buildingConnections"
-run/main_scene="res://Scenes/dialog_manager.tscn"
+run/main_scene="res://Scenes/prefabs/dialog_manager.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+SceneTransition="*res://Scenes/UI/scene_transition.tscn"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
 [dialogic]
@@ -49,6 +50,13 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 

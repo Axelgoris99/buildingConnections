@@ -1,72 +1,72 @@
 [gd_scene load_steps=8 format=3 uid="uid://bl1uvk26gmqh6"]
 
-[ext_resource type="PackedScene" uid="uid://wva1e47o44vx" path="res://Scenes/bar.tscn" id="1_7d0ws"]
-[ext_resource type="Material" uid="uid://bb6ot62bb76qp" path="res://Materials/Table.tres" id="2_p5qxj"]
-[ext_resource type="PackedScene" uid="uid://bhj08y55qkfvk" path="res://Scenes/chair.tscn" id="3_8uo4m"]
-[ext_resource type="Script" path="res://Scripts/table.gd" id="3_tg78g"]
-[ext_resource type="PackedScene" uid="uid://b7asskj28hkt" path="res://Scenes/character.tscn" id="4_8h0n1"]
-[ext_resource type="PackedScene" uid="uid://b6rk0ghiesos0" path="res://Scenes/state_machine.tscn" id="4_nw5os"]
+[ext_resource type="PackedScene" uid="uid://wva1e47o44vx" path="res://Scenes/prefabs/bar.tscn" id="1_pku5k"]
+[ext_resource type="PackedScene" uid="uid://bhj08y55qkfvk" path="res://Scenes/prefabs/chair.tscn" id="2_ghek1"]
+[ext_resource type="Material" uid="uid://bb6ot62bb76qp" path="res://Materials/Table.tres" id="3_34fuk"]
+[ext_resource type="Script" path="res://Scripts/table.gd" id="4_6pcq2"]
+[ext_resource type="PackedScene" uid="uid://b7asskj28hkt" path="res://Scenes/prefabs/character.tscn" id="5_gqu2r"]
+[ext_resource type="PackedScene" uid="uid://b6rk0ghiesos0" path="res://Scenes/prefabs/state_machine.tscn" id="6_i0e4g"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m3ffk"]
 
 [node name="Lvl1" type="Node3D"]
 
-[node name="Bar" parent="." instance=ExtResource("1_7d0ws")]
+[node name="Bar" parent="." instance=ExtResource("1_pku5k")]
 
-[node name="Chair" parent="Bar" instance=ExtResource("3_8uo4m")]
+[node name="Chair" parent="Bar" instance=ExtResource("2_ghek1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.46417, 0.436166, 0.695774)
 
-[node name="Chair2" parent="Bar" instance=ExtResource("3_8uo4m")]
+[node name="Chair2" parent="Bar" instance=ExtResource("2_ghek1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.506177, 0.436166, 0.695774)
 
-[node name="Chair3" parent="Bar" instance=ExtResource("3_8uo4m")]
+[node name="Chair3" parent="Bar" instance=ExtResource("2_ghek1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.539987, 0.436166, 0.695774)
 
-[node name="Chair4" parent="Bar" instance=ExtResource("3_8uo4m")]
+[node name="Chair4" parent="Bar" instance=ExtResource("2_ghek1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.63376, 0.436166, 0.695774)
 
 [node name="Table1" type="MeshInstance3D" parent="." groups=["tables"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975214, 0, 2.95395)
-material_override = ExtResource("2_p5qxj")
+material_override = ExtResource("3_34fuk")
 mesh = SubResource("BoxMesh_m3ffk")
 skeleton = NodePath("")
-script = ExtResource("3_tg78g")
+script = ExtResource("4_6pcq2")
 
-[node name="Chair" parent="Table1" instance=ExtResource("3_8uo4m")]
+[node name="Chair" parent="Table1" instance=ExtResource("2_ghek1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186844, 1.00046)
 
-[node name="Chair2" parent="Table1" instance=ExtResource("3_8uo4m")]
+[node name="Chair2" parent="Table1" instance=ExtResource("2_ghek1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186844, -1.12075)
 
 [node name="Table2" type="MeshInstance3D" parent="." groups=["tables"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50442, 0, 2.95395)
-material_override = ExtResource("2_p5qxj")
+material_override = ExtResource("3_34fuk")
 mesh = SubResource("BoxMesh_m3ffk")
 skeleton = NodePath("")
-script = ExtResource("3_tg78g")
+script = ExtResource("4_6pcq2")
 
-[node name="Chair3" parent="Table2" instance=ExtResource("3_8uo4m")]
+[node name="Chair3" parent="Table2" instance=ExtResource("2_ghek1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424161, 0.186844, 1.00046)
 
-[node name="Chair4" parent="Table2" instance=ExtResource("3_8uo4m")]
+[node name="Chair4" parent="Table2" instance=ExtResource("2_ghek1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424161, 0.186844, -1.12075)
 
 [node name="Characters" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0650053, 0, -0.644445)
 
-[node name="axel" parent="Characters" instance=ExtResource("4_8h0n1")]
+[node name="axel" parent="Characters" instance=ExtResource("5_gqu2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57945, 0.49436, 1.199)
 
-[node name="lea" parent="Characters" instance=ExtResource("4_8h0n1")]
+[node name="lea" parent="Characters" instance=ExtResource("5_gqu2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451987, 0.49436, 1.199)
 
-[node name="pirate" parent="Characters" instance=ExtResource("4_8h0n1")]
+[node name="pirate" parent="Characters" instance=ExtResource("5_gqu2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.632473, 0.49436, 1.199)
 
-[node name="test" parent="Characters" instance=ExtResource("4_8h0n1")]
+[node name="test" parent="Characters" instance=ExtResource("5_gqu2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52799, 0.49436, 1.199)
 
-[node name="Control" parent="." groups=["managers"] instance=ExtResource("4_nw5os")]
+[node name="Control" parent="." groups=["managers"] instance=ExtResource("6_i0e4g")]
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(0.775519, -0.276301, 0.567651, 0, 0.899144, 0.437654, -0.631324, -0.339409, 0.697303, 3.29752, 3.15479, 6.04196)
