@@ -23,8 +23,7 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Axel": "res://dialogs/Axel.dch",
-"pirate": "res://dialogs/pirate.dch",
-"superguy": "res://dialogs/superguy.dch"
+"pirate": "res://dialogs/pirate.dch"
 }
 directories/dtl_directory={
 "pirate_timeline": "res://dialogs/pirate_timeline.dtl",
