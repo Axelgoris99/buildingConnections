@@ -1,0 +1,23 @@
+{
+  "character": "pirate",
+  "intro": [
+    {
+      "value": "Hello there!"
+    },
+    {
+      "value": "Ho ho ho!"
+    }
+  ],
+  "likes": [
+    {
+      "object": "rhum",
+      "text": "I like rhum."
+    }
+  ],
+  "dislikes": [
+    {
+      "object": "sharks",
+      "text": "I hate sharks."
+    }
+  ]
+}
