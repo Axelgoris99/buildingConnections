@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://wva1e47o44vx"]
+
+[ext_resource type="Material" uid="uid://b4kro3nb6dogc" path="res://Materials/Earth.tres" id="1_2r26j"]
+[ext_resource type="Material" uid="uid://y2gwxshbnm64" path="res://Materials/Wall.tres" id="2_7cfvp"]
+[ext_resource type="Material" uid="uid://bm7v8finr02o" path="res://Materials/Floor.tres" id="3_6t4cq"]
+[ext_resource type="Material" uid="uid://be7gtrta4u6i6" path="res://Materials/Bar.tres" id="4_n20q8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bm1b0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lavif"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2dmgm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vdfex"]
+
+[node name="Bar" type="Node3D"]
+
+[node name="Earth" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+material_override = ExtResource("1_2r26j")
+mesh = SubResource("PlaneMesh_bm1b0")
+
+[node name="Walls" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.501373)
+
+[node name="backWall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(6, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = ExtResource("2_7cfvp")
+mesh = SubResource("BoxMesh_lavif")
+
+[node name="leftWall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-2.18557e-07, 0, 0.1, 0, 2, 0, -5, 0, -4.37114e-09, -3, 0, 2.5)
+material_override = ExtResource("2_7cfvp")
+mesh = SubResource("BoxMesh_lavif")
+
+[node name="Floor" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(6, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 2.5)
+material_override = ExtResource("3_6t4cq")
+mesh = SubResource("BoxMesh_2dmgm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.883224, -0.178085, 0.433823, 0.106814, 0.977168, 0.183666, -0.456626, -0.11588, 0.88208, 0, 1.27379, 5.34322)
+shadow_enabled = true
+
+[node name="Bar" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.955, 0, 0, 0, 1.145, 0, 0, 0, 0.32, 0.0650053, 0, 0.208582)
+material_override = ExtResource("4_n20q8")
+mesh = SubResource("BoxMesh_vdfex")
