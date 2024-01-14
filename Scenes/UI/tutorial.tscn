@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvu51wmspdbjk"]
+
+[ext_resource type="Theme" uid="uid://dld6bm6h35xsv" path="res://UI/theme.tres" id="1_du6kb"]
+[ext_resource type="Script" path="res://Scripts/tutorial.gd" id="2_tk21i"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1587.0
+offset_bottom = -919.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_du6kb")
+script = ExtResource("2_tk21i")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -311.0
+offset_top = 23.0
+offset_right = -23.0
+offset_bottom = 133.0
+grow_horizontal = 0
+text = "See tutorial"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

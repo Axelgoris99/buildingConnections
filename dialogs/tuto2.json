@@ -1,0 +1,23 @@
+{
+  "character": "Tac",
+  "intro": [
+	{
+	  "value": "Yo!"
+	},
+	{
+	  "value": "Good evening, gentleman."
+	}
+  ],
+  "likes": [
+	{
+	  "object": "boardgames",
+	  "text": "I like [color=green] boardgames[/color]. It's cool."
+	}
+  ],
+  "dislikes": [
+	{
+	  "object": "rhum",
+	  "text": "I dislike [color=red]rhum[/color]. My wife said I drank too much... and got me into Gin, that's the real deal."
+	}
+  ]
+}

@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfufl7ceyv86o"]
+[gd_scene load_steps=13 format=3 uid="uid://cfufl7ceyv86o"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_6ongg"]
 [ext_resource type="Theme" uid="uid://dld6bm6h35xsv" path="res://UI/theme.tres" id="1_oi6q4"]
 [ext_resource type="Theme" uid="uid://cuqwq507yae8h" path="res://UI/style/title.tres" id="3_5hkla"]
 [ext_resource type="Texture2D" uid="uid://j5ci5f5i0l8j" path="res://UI/glass.png" id="4_hv50r"]
 [ext_resource type="Texture2D" uid="uid://l86u03tvsfjg" path="res://UI/bubble.png" id="5_7tiwe"]
+[ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="5_0163g"]
+[ext_resource type="FontFile" uid="uid://b5c0p00x6g6u5" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Italic.ttf" id="6_2f3mf"]
+[ext_resource type="Texture2D" uid="uid://bv1hbvu6p6k03" path="res://UI/barmaker.webp" id="8_7ygy7"]
+[ext_resource type="Texture2D" uid="uid://xg7ne82ucm61" path="res://UI/arrow.png" id="9_ys3x0"]
 
 [sub_resource type="Animation" id="Animation_fl36h"]
 length = 0.001
@@ -245,10 +249,35 @@ bbcode_enabled = true
 text = "MAKER"
 fit_content = true
 
+[node name="he is" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 946.0
+offset_right = 1265.0
+offset_bottom = 1065.0
+theme = ExtResource("5_0163g")
+theme_override_fonts/normal_font = ExtResource("6_2f3mf")
+theme_override_font_sizes/normal_font_size = 101
+bbcode_enabled = true
+text = "He is the..."
+fit_content = true
+
 [node name="Glass" type="Sprite2D" parent="."]
 position = Vector2(770, 255)
 rotation = 0.0523184
 texture = ExtResource("4_hv50r")
+
+[node name="Barmaker" type="Sprite2D" parent="."]
+position = Vector2(1354, 763)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("8_7ygy7")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(1531, 593)
+rotation = -2.47683
+scale = Vector2(0.853077, 0.853077)
+texture = ExtResource("9_ys3x0")
+flip_h = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

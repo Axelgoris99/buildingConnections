@@ -8,7 +8,7 @@ var current_character: Character
 
 func set_character(character: Character):
 	current_character = character
-	name_label.text = character.name.to_upper()
+	name_label.text = character.display_name.to_upper()
 	# Not efficient but meh, no time
 	for like in character.likes:
 		if(like in character.known_objects):

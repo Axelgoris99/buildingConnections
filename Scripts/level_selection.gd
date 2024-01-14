@@ -19,4 +19,10 @@ func _on_lvl_4_pressed():
 
 
 func _on_button_pressed():
+	Music.play_button()
 	SceneTransition.change_scene_to_file("res://Scenes/UI/menu.tscn")
+
+func _on_tuto_pressed():
+	Music.play_button()
+	SceneTransition.change_scene_to_file("res://Scenes/lvls/tuto.tscn")
+

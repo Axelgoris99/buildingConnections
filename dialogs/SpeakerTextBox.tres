@@ -52,4 +52,4 @@ base_overrides = {
 "global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
 }
 layers = Array[ExtResource("2_bygp0")]([SubResource("Resource_6xxav"), SubResource("Resource_f2fif"), SubResource("Resource_fc56s"), SubResource("Resource_kx6uf"), SubResource("Resource_aavg8"), SubResource("Resource_du8ct"), SubResource("Resource_yywey")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 1

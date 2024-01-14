@@ -32,12 +32,14 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Axel": "res://dialogs/Axel.dch",
+"barman": "res://dialogs/barman.dch",
 "pirate": "res://dialogs/pirate.dch"
 }
 directories/dtl_directory={
-"timeline_test": "res://dialogs/timeline_test.dtl"
+"timeline_test": "res://dialogs/timeline_test.dtl",
+"tutorial": "res://dialogs/tutorial.dtl"
 }
-layout/style_list=["res://dialogs/like.tres", "res://dialogs/SpeakerTextBox.tres"]
+layout/style_list=["res://dialogs/SpeakerTextBox.tres"]
 layout/default_style="res://dialogs/like.tres"
 glossary/default_case_sensitive=true
 variables={}
