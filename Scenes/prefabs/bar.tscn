@@ -16,7 +16,7 @@
 [node name="Bar" type="Node3D"]
 
 [node name="Earth" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.01, 0)
 material_override = ExtResource("1_2r26j")
 mesh = SubResource("PlaneMesh_bm1b0")
 
@@ -34,7 +34,7 @@ material_override = ExtResource("2_7cfvp")
 mesh = SubResource("BoxMesh_lavif")
 
 [node name="Floor" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(6, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 2.5)
+transform = Transform3D(6, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, -0.05, 2.5)
 material_override = ExtResource("3_6t4cq")
 mesh = SubResource("BoxMesh_2dmgm")
 

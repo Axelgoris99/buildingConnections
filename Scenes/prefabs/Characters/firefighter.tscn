@@ -3,7 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_00hn0"]
 [ext_resource type="Texture2D" uid="uid://bmnm7wot5qtgq" path="res://characters/firefighter_Polygon_City_Characters_Texture_04_B.png" id="2_hmb2x"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wdbyf"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n15bq"]
+radius = 0.409606
+height = 1.49094
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o472j"]
 resource_name = "lambert2"
@@ -1695,15 +1697,17 @@ _data = {
 
 [node name="firefighter" type="Node3D" groups=["characters"]]
 script = ExtResource("1_00hn0")
+display_name = "firefighter"
 
 [node name="StaticBody" type="StaticBody3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Collider" type="CollisionShape3D" parent="StaticBody"]
-shape = SubResource("CapsuleShape3D_wdbyf")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.15425)
+shape = SubResource("CapsuleShape3D_n15bq")
 
 [node name="AnimatedChar" type="Node3D" parent="StaticBody"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0417795, 0.0208898, -0.224952)
 
 [node name="Armature" type="Node3D" parent="StaticBody/AnimatedChar"]
 transform = Transform3D(0.000934537, -7.21365e-05, -4.20825e-05, -4.12954e-05, 1.17961e-05, -0.000937278, 7.25899e-05, 0.00093541, 8.57438e-06, 0.008464, -0.00428945, 0.0271802)

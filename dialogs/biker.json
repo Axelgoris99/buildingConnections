@@ -1,0 +1,23 @@
+{
+  "character": "test",
+  "intro": [
+	{
+	  "value": "Oh boy"
+	},
+	{
+	  "value": "Grrrrrrr!"
+	}
+  ],
+  "likes": [
+	{
+	  "object": "sharks",
+	  "text": "I love [color=green] sharks[/color] more than anything, yum."
+	}
+  ],
+  "dislikes": [
+	{
+	  "object": "parrot",
+	  "text": "I hate [color=red]parrot[/color]."
+	}
+  ]
+}
