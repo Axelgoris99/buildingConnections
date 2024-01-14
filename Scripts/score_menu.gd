@@ -1,6 +1,7 @@
 extends Control
 
 @export var score_node: RichTextLabel
+@export var highscore_node : RichTextLabel
 
 func _on_retry_pressed():
 	get_tree().paused = false

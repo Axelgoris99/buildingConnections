@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://r0cgpqwm0irh" path="res://Materials/blur.tres" id="3_d3nt4"]
 [ext_resource type="Theme" uid="uid://cuqwq507yae8h" path="res://UI/style/title.tres" id="4_goy33"]
 
-[node name="Score" type="Control" node_paths=PackedStringArray("score_node")]
+[node name="Score" type="Control" node_paths=PackedStringArray("score_node", "highscore_node")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -16,7 +16,8 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_wntus")
 script = ExtResource("2_kt7ip")
-score_node = NodePath("TextureRect/Panel/Score")
+score_node = NodePath("TextureRect/Panel/ScoreText/Score")
+highscore_node = NodePath("TextureRect/Panel/highscoreText/highscore")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = ExtResource("3_d3nt4")
@@ -73,24 +74,54 @@ anchor_right = 0.5
 offset_left = -239.0
 offset_top = 28.0
 offset_right = 216.0
-offset_bottom = 149.0
+offset_bottom = 320.0
 grow_horizontal = 2
 theme = ExtResource("4_goy33")
 theme_type_variation = &"Subtitle"
 bbcode_enabled = true
 text = "SCORE"
 
-[node name="Score" type="RichTextLabel" parent="TextureRect/Panel"]
+[node name="Score" type="RichTextLabel" parent="TextureRect/Panel/ScoreText"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -111.0
-offset_top = 176.0
-offset_right = 130.0
-offset_bottom = 297.0
+offset_left = -94.5
+offset_top = 122.0
+offset_right = 146.5
+offset_bottom = 264.0
 grow_horizontal = 2
 theme = ExtResource("4_goy33")
+theme_type_variation = &"Subtitle"
+bbcode_enabled = true
+text = "1235"
+fit_content = true
+
+[node name="highscoreText" type="RichTextLabel" parent="TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.0
+offset_top = 343.0
+offset_right = 197.0
+offset_bottom = 511.0
+grow_horizontal = 2
+theme = ExtResource("1_wntus")
+bbcode_enabled = true
+text = "Current best"
+fit_content = true
+
+[node name="highscore" type="RichTextLabel" parent="TextureRect/Panel/highscoreText"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = 49.0
+offset_right = 50.5
+offset_bottom = 113.0
+grow_horizontal = 2
 theme_type_variation = &"Subtitle"
 bbcode_enabled = true
 text = "1235"

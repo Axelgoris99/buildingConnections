@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bl1uvk26gmqh6"]
 
-[ext_resource type="PackedScene" uid="uid://cwfffe30prtp" path="res://Scenes/prefabs/room.tscn" id="1_hf2nn"]
-[ext_resource type="PackedScene" uid="uid://bge4vo1mf77fu" path="res://Scenes/prefabs/stool.tscn" id="2_e7ouk"]
+[ext_resource type="PackedScene" path="res://Scenes/prefabs/room.tscn" id="1_hf2nn"]
+[ext_resource type="PackedScene" path="res://Scenes/prefabs/stool.tscn" id="2_e7ouk"]
 [ext_resource type="PackedScene" uid="uid://bhj08y55qkfvk" path="res://Scenes/prefabs/chair.tscn" id="2_ghek1"]
 [ext_resource type="PackedScene" uid="uid://ddklrojam1nhn" path="res://Imported/bar.glb" id="3_ku3v0"]
 [ext_resource type="PackedScene" uid="uid://dx25g184jjak3" path="res://Imported/table.glb" id="4_dpt4e"]
