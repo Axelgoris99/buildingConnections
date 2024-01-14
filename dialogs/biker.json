@@ -1,5 +1,5 @@
 {
-  "character": "test",
+  "character": "biker",
   "intro": [
 	{
 	  "value": "Oh boy"
@@ -10,14 +10,18 @@
   ],
   "likes": [
 	{
-	  "object": "sharks",
-	  "text": "I love [color=green] sharks[/color] more than anything, yum."
+	  "object": "dog",
+	  "text": "Riding the open road is a thrill, but ya know what's even better? The unconditional love of a loyal [color=green]dog[/color] – that's my kind of freedom, man!."
+	},
+	{
+		"object" : "beer",
+		"text" : "Cruisin' on two wheels and kickin' back with a cold [color=green]beer[/color] – that's the biker life, my friend!"
 	}
   ],
   "dislikes": [
 	{
-	  "object": "parrot",
-	  "text": "I hate [color=red]parrot[/color]."
+	  "object": "boardgames",
+	  "text": "Nothing beats the thrill of the ride on my bike. But when it comes to [color=red]boardgames[/color], count me out. I prefer the real-world adventures on the open road."
 	}
   ]
 }

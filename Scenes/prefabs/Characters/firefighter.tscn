@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c5w3yaecmv3we"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_00hn0"]
-[ext_resource type="Texture2D" uid="uid://bmnm7wot5qtgq" path="res://characters/firefighter_Polygon_City_Characters_Texture_04_B.png" id="2_hmb2x"]
+[ext_resource type="Texture2D" uid="uid://bmnm7wot5qtgq" path="res://Imported/firefighter_Polygon_City_Characters_Texture_04_B.png" id="2_hmb2x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n15bq"]
 radius = 0.409606
@@ -2065,3 +2065,4 @@ skin = SubResource("Skin_8duxa")
 libraries = {
 "": SubResource("AnimationLibrary_nqbs8")
 }
+autoplay = "Armature_001|mixamo_com|Layer0"

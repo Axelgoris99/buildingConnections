@@ -1,83 +1,78 @@
 [gd_scene load_steps=11 format=3 uid="uid://bl1uvk26gmqh6"]
 
-[ext_resource type="PackedScene" uid="uid://wva1e47o44vx" path="res://Scenes/prefabs/bar.tscn" id="1_pku5k"]
+[ext_resource type="PackedScene" uid="uid://cwfffe30prtp" path="res://Scenes/prefabs/room.tscn" id="1_hf2nn"]
+[ext_resource type="PackedScene" uid="uid://bge4vo1mf77fu" path="res://Scenes/prefabs/stool.tscn" id="2_e7ouk"]
 [ext_resource type="PackedScene" uid="uid://bhj08y55qkfvk" path="res://Scenes/prefabs/chair.tscn" id="2_ghek1"]
-[ext_resource type="Material" uid="uid://bb6ot62bb76qp" path="res://Materials/Table.tres" id="3_34fuk"]
-[ext_resource type="Script" path="res://Scripts/table.gd" id="4_6pcq2"]
+[ext_resource type="PackedScene" uid="uid://ddklrojam1nhn" path="res://Imported/bar.glb" id="3_ku3v0"]
+[ext_resource type="PackedScene" uid="uid://dx25g184jjak3" path="res://Imported/table.glb" id="4_dpt4e"]
 [ext_resource type="PackedScene" uid="uid://c5w3yaecmv3we" path="res://Scenes/prefabs/Characters/firefighter.tscn" id="6_2f4wv"]
 [ext_resource type="PackedScene" uid="uid://b6rk0ghiesos0" path="res://Scenes/prefabs/state_machine.tscn" id="6_i0e4g"]
 [ext_resource type="PackedScene" uid="uid://cn6s11yc2s8fm" path="res://Scenes/prefabs/Characters/hotdog.tscn" id="7_mshho"]
 [ext_resource type="PackedScene" uid="uid://oya0halhgycm" path="res://Scenes/prefabs/Characters/gamergirl.tscn" id="8_k4trh"]
 [ext_resource type="PackedScene" uid="uid://b8tflm1lc8182" path="res://Scenes/prefabs/Characters/biker.tscn" id="8_od4wf"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_m3ffk"]
-
 [node name="Lvl1" type="Node3D"]
 
-[node name="Bar" parent="." instance=ExtResource("1_pku5k")]
+[node name="bar_scene" parent="." instance=ExtResource("1_hf2nn")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 2.0732)
 
-[node name="Chair" parent="Bar" instance=ExtResource("2_ghek1")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.46417, 0.436166, 0.695774)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="bar_scene"]
+transform = Transform3D(0.883224, -0.178085, 0.433823, 0.106814, 0.977168, 0.183666, -0.456626, -0.11588, 0.88208, 0, 1.27379, 5.34322)
+shadow_enabled = true
 
-[node name="Chair2" parent="Bar" instance=ExtResource("2_ghek1")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.506177, 0.436166, 0.695774)
+[node name="stool" parent="bar_scene" instance=ExtResource("2_e7ouk")]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 0, 0, -2)
 
-[node name="Chair3" parent="Bar" instance=ExtResource("2_ghek1")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.539987, 0.436166, 0.695774)
+[node name="stool4" parent="bar_scene" instance=ExtResource("2_e7ouk")]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -2, 0, -2)
 
-[node name="Chair4" parent="Bar" instance=ExtResource("2_ghek1")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.63376, 0.436166, 0.695774)
+[node name="stool2" parent="bar_scene" instance=ExtResource("2_e7ouk")]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 2, 0, -2)
 
-[node name="Table1" type="MeshInstance3D" parent="." groups=["tables"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975214, 0, 2.95395)
-material_override = ExtResource("3_34fuk")
-mesh = SubResource("BoxMesh_m3ffk")
-skeleton = NodePath("")
-script = ExtResource("4_6pcq2")
+[node name="stool3" parent="bar_scene" instance=ExtResource("2_e7ouk")]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 4, 0, -2)
 
-[node name="Chair" parent="Table1" instance=ExtResource("2_ghek1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186844, 1.00046)
+[node name="bar" parent="bar_scene" instance=ExtResource("3_ku3v0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52755, 0, -2.96993)
 
-[node name="Chair2" parent="Table1" instance=ExtResource("2_ghek1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186844, -1.12075)
+[node name="Table" parent="bar_scene" instance=ExtResource("4_dpt4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20562, 0, 2.98738)
 
-[node name="Table2" type="MeshInstance3D" parent="." groups=["tables"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50442, 0, 2.95395)
-material_override = ExtResource("3_34fuk")
-mesh = SubResource("BoxMesh_m3ffk")
-skeleton = NodePath("")
-script = ExtResource("4_6pcq2")
+[node name="Chair" parent="bar_scene/Table" instance=ExtResource("2_ghek1")]
+transform = Transform3D(-1, 0, -7.15493e-08, 0, 1, 0, 7.15493e-08, 0, -1, 0, 0, 1.1501)
 
-[node name="Chair3" parent="Table2" instance=ExtResource("2_ghek1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424161, 0.186844, 1.00046)
+[node name="Chair2" parent="bar_scene/Table" instance=ExtResource("2_ghek1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.30651)
 
-[node name="Chair4" parent="Table2" instance=ExtResource("2_ghek1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424161, 0.186844, -1.12075)
+[node name="Table2" parent="bar_scene" instance=ExtResource("4_dpt4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14917, 0, 2.98738)
+
+[node name="Chair" parent="bar_scene/Table2" instance=ExtResource("2_ghek1")]
+transform = Transform3D(-1, 0, -7.15493e-08, 0, 1, 0, 7.15493e-08, 0, -1, 0, 0, 1.1501)
+
+[node name="Chair2" parent="bar_scene/Table2" instance=ExtResource("2_ghek1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.30651)
 
 [node name="Characters" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0650053, 0, -0.644445)
 
 [node name="hotdog" parent="Characters" instance=ExtResource("7_mshho")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.452, 0, 1.199)
-
-[node name="firefighter" parent="Characters" instance=ExtResource("6_2f4wv")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.528, 0, 1.199)
-
-[node name="AnimationPlayer" parent="Characters/firefighter/StaticBody/AnimatedChar" index="1"]
-autoplay = "Armature_001|mixamo_com|Layer0"
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.924943, 0, 1.64805)
 
 [node name="gamergirl" parent="Characters" instance=ExtResource("8_k4trh")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.579, 0, 1.37501)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.987528, 0, 1.74407)
 
 [node name="biker" parent="Characters" instance=ExtResource("8_od4wf")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.624, 0, 1.199)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0457938, 0, 1.70449)
+
+[node name="firefighter" parent="Characters" instance=ExtResource("6_2f4wv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.91715, 0, 1.62144)
 
 [node name="Control" parent="." groups=["managers"] instance=ExtResource("6_i0e4g")]
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(0.775519, -0.276301, 0.567651, 0, 0.899144, 0.437654, -0.631324, -0.339409, 0.697303, 3.29752, 3.15479, 6.04196)
 projection = 1
+current = true
 fov = 18.2
 size = 4.477
-
-[editable path="Characters/firefighter"]

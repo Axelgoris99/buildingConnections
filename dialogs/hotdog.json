@@ -1,23 +1,23 @@
 {
-  "character": "test",
+  "character": "hotdog",
   "intro": [
 	{
-	  "value": "Oh boy"
+	  "value": "Hello there!"
 	},
 	{
-	  "value": "Grrrrrrr!"
+	  "value": "Nice to meet you!"
 	}
   ],
   "likes": [
 	{
-	  "object": "sharks",
-	  "text": "I love [color=green] sharks[/color] more than anything, yum."
+	  "object": "boardgames",
+	  "text": "I am fond of [color=green] boardgames[/color]. I am in a club, we play every Thursday."
 	}
   ],
   "dislikes": [
 	{
-	  "object": "parrot",
-	  "text": "I hate [color=red]parrot[/color]."
+	  "object": "dog",
+	  "text": "I hate [color=red]dogs[/color]. You can't imagine how many times I've been chased by a hungry dog!"
 	}
   ]
 }

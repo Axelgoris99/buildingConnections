@@ -1,5 +1,5 @@
 {
-  "character": "test",
+  "character": "firefighter",
   "intro": [
 	{
 	  "value": "Hey!"
@@ -10,14 +10,14 @@
   ],
   "likes": [
 	{
-	  "object": "sharks",
-	  "text": "I love [color=green] sharks[/color] more than anything, yum."
+	  "object": "cat",
+	  "text": "[color=green]Cats[/color] are so cute. Today I rescued a kitten stuck in a tree. He was so scared, poor little thing!"
 	}
   ],
   "dislikes": [
 	{
 	  "object": "parrot",
-	  "text": "I hate [color=red]parrot[/color]."
+	  "text": "I hate [color=red]parrots[/color]."
 	}
   ]
 }

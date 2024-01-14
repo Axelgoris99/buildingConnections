@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b8tflm1lc8182"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_c80yv"]
-[ext_resource type="Texture2D" uid="uid://dvci81h1nbbeq" path="res://characters/city_characters_all_Polygon_City_Characters_Texture_04_B.png" id="2_ql7qe"]
+[ext_resource type="Texture2D" uid="uid://dvci81h1nbbeq" path="res://Imported/city_characters_all_Polygon_City_Characters_Texture_04_B.png" id="2_ql7qe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wdbyf"]
 radius = 0.409606
