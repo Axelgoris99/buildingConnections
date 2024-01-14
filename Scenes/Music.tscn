@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkki4cw68w6jc"]
+
+[ext_resource type="AudioStream" uid="uid://cqe7cf3qo2wkt" path="res://Music/bar.mp3" id="1_kxhyd"]
+[ext_resource type="Script" path="res://Scripts/Music.gd" id="2_fo0e0"]
+[ext_resource type="AudioStream" uid="uid://bnmhn8wc185b3" path="res://Music/button.wav" id="3_0n2ke"]
+[ext_resource type="AudioStream" uid="uid://bva1704j8yph1" path="res://Music/placing.wav" id="4_odlea"]
+[ext_resource type="AudioStream" uid="uid://ds2s4jd2a1oyt" path="res://Music/picking.wav" id="5_ynckr"]
+[ext_resource type="AudioStream" uid="uid://dv0l280jx23pr" path="res://Music/success.mp3" id="6_dxa0a"]
+
+[node name="Music" type="AudioStreamPlayer" node_paths=PackedStringArray("button", "placement", "picking", "success")]
+process_mode = 3
+stream = ExtResource("1_kxhyd")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("2_fo0e0")
+button = NodePath("ButtonEffect")
+placement = NodePath("PlacementEffect")
+picking = NodePath("PickingEffect")
+success = NodePath("Success")
+
+[node name="ButtonEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0n2ke")
+volume_db = -5.0
+
+[node name="PlacementEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_odlea")
+volume_db = -5.0
+
+[node name="PickingEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ynckr")
+volume_db = -5.0
+
+[node name="Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dxa0a")
+volume_db = -5.0

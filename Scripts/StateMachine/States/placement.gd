@@ -49,6 +49,7 @@ func place_character():
 	current_character.global_position = current_chair.global_position
 	current_character.rotate_y(current_chair.global_rotation.y - current_character.global_rotation.y)
 	current_character.set_chair(current_chair)
+	Music.play_placement()
 	state_machine.transition_to("idle")
 
 func connect_chairs():

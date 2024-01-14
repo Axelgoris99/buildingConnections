@@ -29,6 +29,7 @@ func exit():
 	_character = null
 
 func transition_to_end():
+	Music.play_success()
 	state_machine.transition_to("score")
 	
 func on_character_hovered(character: Node3D):
@@ -50,8 +51,10 @@ func handle_input(event):
 	if(!_character):
 		return
 	if(Input.is_action_just_released("select")):
+		Music.play_picking()
 		state_machine.transition_to("placement", {character = _character, hover_menu = hover_menu })
 	if(Input.is_action_just_released("interact")):
+		Music.play_picking()
 		state_machine.transition_to("dialog", {character = _character, hover_menu = hover_menu })
 
 func connect_characters_colliders():

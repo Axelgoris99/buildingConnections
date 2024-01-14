@@ -24,6 +24,7 @@ config/windows_native_icon="res://UI/icon.ico"
 
 [autoload]
 
+Music="*res://Scenes/Music.tscn"
 SceneTransition="*res://Scenes/UI/scene_transition.tscn"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 

@@ -4,9 +4,11 @@ extends Control
 @export var highscore_node : RichTextLabel
 
 func _on_retry_pressed():
+	Music.play_button()
 	get_tree().paused = false
 	SceneTransition.reload_scene()
 
 func _on_main_menu_pressed():
+	Music.play_button()
 	get_tree().paused = false
 	SceneTransition.change_scene_to_file("res://Scenes/UI/menu.tscn")

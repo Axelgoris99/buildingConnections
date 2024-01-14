@@ -2,6 +2,7 @@ extends Control
 
 
 func _on_lvl_1_pressed():
+	Music.play_button()
 	SceneTransition.change_scene_to_file("res://Scenes/lvls/lvl1.tscn")
 
 
