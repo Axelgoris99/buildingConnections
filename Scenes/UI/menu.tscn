@@ -246,7 +246,7 @@ text = "MAKER"
 fit_content = true
 
 [node name="Glass" type="Sprite2D" parent="."]
-position = Vector2(770, 258)
+position = Vector2(770, 255)
 rotation = 0.0523184
 texture = ExtResource("4_hv50r")
 
