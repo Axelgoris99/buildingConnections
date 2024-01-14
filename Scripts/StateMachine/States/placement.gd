@@ -16,7 +16,7 @@ func enter(_msg := {}) -> void:
 	current_character = _msg.character
 	highlightMaterial = load("res://Materials/outlineHover.tres")
 	hoverMaterial = load("res://Materials/outlineSelect.tres")
-	var material = current_character.get_node("StaticBody/Mesh") as MeshInstance3D
+	var material = current_character.get_node("StaticBody/AnimatedChar/Armature/Skeleton3D/Mesh") as MeshInstance3D
 	material.material_overlay = hoverMaterial
 	chairs = get_tree().get_nodes_in_group("chairs")
 	connect_chairs()
@@ -25,7 +25,7 @@ func enter(_msg := {}) -> void:
 func exit():
 	disconnect_chairs()
 	unhighlight_chairs()
-	var material = current_character.get_node("StaticBody/Mesh") as MeshInstance3D
+	var material = current_character.get_node("StaticBody/AnimatedChar/Armature/Skeleton3D/Mesh") as MeshInstance3D
 	material.material_overlay = null
 	current_chair = null
 	current_character = null
