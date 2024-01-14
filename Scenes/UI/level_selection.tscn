@@ -1,18 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ch7opybijq84q"]
 
 [ext_resource type="Script" path="res://Scripts/level_selection.gd" id="1_1lxxo"]
-
-[sub_resource type="Gradient" id="Gradient_1nwq3"]
-offsets = PackedFloat32Array(0, 0.653226, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.599462, 0.599462, 0.599462, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_yjn2i"]
-gradient = SubResource("Gradient_1nwq3")
-width = 128
-height = 128
-use_hdr = true
-fill_from = Vector2(0.423077, 0.247863)
-fill_to = Vector2(0, 1)
+[ext_resource type="Theme" uid="uid://dld6bm6h35xsv" path="res://UI/theme.tres" id="1_7ud0s"]
+[ext_resource type="Theme" uid="uid://cuqwq507yae8h" path="res://UI/style/title.tres" id="3_1k5jv"]
 
 [node name="LevelSelection" type="Control"]
 layout_mode = 3
@@ -23,19 +13,25 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7ud0s")
 script = ExtResource("1_1lxxo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(53, -304)
-scale = Vector2(1146.5, 645.5)
-texture = SubResource("GradientTexture2D_yjn2i")
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = -1071.0
+offset_top = -589.0
+offset_right = 1025.0
+offset_bottom = 582.0
+color = Color(0.0980392, 0.121569, 0.133333, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 2
 layout_mode = 0
 offset_left = -273.0
 offset_top = -98.0
 offset_right = 272.0
 offset_bottom = 123.0
+theme_override_constants/separation = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -69,20 +65,21 @@ text = "Level 4"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = -495.0
-offset_top = -280.0
-offset_right = -150.0
-offset_bottom = -203.0
-theme_override_font_sizes/normal_font_size = 46
-text = "Level Selector"
+offset_left = -905.0
+offset_top = -518.0
+offset_right = 806.0
+offset_bottom = -138.0
+theme = ExtResource("3_1k5jv")
+theme_override_font_sizes/normal_font_size = 161
+text = "LEVEL SELECTOR"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = -523.0
-offset_top = 225.0
-offset_right = -350.0
-offset_bottom = 281.0
-text = "Back to Main menu"
+offset_left = -888.0
+offset_top = 393.0
+offset_right = -601.0
+offset_bottom = 487.0
+text = "Back"
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/lvl1" to="." method="_on_lvl_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/lvl2" to="." method="_on_lvl_2_pressed"]

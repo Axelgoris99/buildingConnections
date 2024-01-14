@@ -1,17 +1,202 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfufl7ceyv86o"]
+[gd_scene load_steps=9 format=3 uid="uid://cfufl7ceyv86o"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_6ongg"]
+[ext_resource type="Theme" uid="uid://dld6bm6h35xsv" path="res://UI/theme.tres" id="1_oi6q4"]
+[ext_resource type="Theme" uid="uid://cuqwq507yae8h" path="res://UI/style/title.tres" id="3_5hkla"]
+[ext_resource type="Texture2D" uid="uid://j5ci5f5i0l8j" path="res://UI/glass.png" id="4_hv50r"]
+[ext_resource type="Texture2D" uid="uid://l86u03tvsfjg" path="res://UI/bubble.png" id="5_7tiwe"]
+
+[sub_resource type="Animation" id="Animation_pt5o1"]
+resource_name = "glow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(1, 1, 0, 0.592157), Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fl36h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cf1c7"]
+_data = {
+"RESET": SubResource("Animation_fl36h"),
+"glow": SubResource("Animation_pt5o1")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_oi6q4")
 script = ExtResource("1_6ongg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 2186.0
+offset_bottom = 1188.0
+color = Color(0.0980392, 0.121569, 0.133333, 1)
+
+[node name="bubbles" type="Node2D" parent="."]
+position = Vector2(20, 96)
+
+[node name="Bubble" type="Sprite2D" parent="bubbles"]
+position = Vector2(290, 572)
+rotation = 1.09709
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+
+[node name="Bubble10" type="Sprite2D" parent="bubbles"]
+position = Vector2(168, 570)
+rotation = 0.811347
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble10"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+speed_scale = 1.2
+
+[node name="Bubble11" type="Sprite2D" parent="bubbles"]
+position = Vector2(38, 791)
+rotation = 2.99259
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble11"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+
+[node name="Bubble14" type="Sprite2D" parent="bubbles"]
+position = Vector2(493, 740)
+rotation = 3.23885
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble14"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+speed_scale = 1.1
+
+[node name="Bubble12" type="Sprite2D" parent="bubbles"]
+position = Vector2(423, 783)
+rotation = 2.26366
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble12"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+speed_scale = 0.9
+
+[node name="Bubble13" type="Sprite2D" parent="bubbles"]
+position = Vector2(437, 896)
+rotation = 3.73234
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble13"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+speed_scale = 0.85
+
+[node name="Bubble2" type="Sprite2D" parent="bubbles"]
+position = Vector2(410, 454)
+rotation = 1.70851
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble2"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+speed_scale = 0.94
+
+[node name="Bubble9" type="Sprite2D" parent="bubbles"]
+position = Vector2(492, 620)
+rotation = -1.91569
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble9"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+speed_scale = 1.12
+
+[node name="Bubble3" type="Sprite2D" parent="bubbles"]
+position = Vector2(194, 478)
+rotation = 1.13914
+texture = ExtResource("5_7tiwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bubbles/Bubble3"]
+libraries = {
+"": SubResource("AnimationLibrary_cf1c7")
+}
+autoplay = "glow"
+speed_scale = 1.05
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -27,20 +212,43 @@ grow_vertical = 0
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="bar" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 51.0
+offset_right = 684.0
+offset_bottom = 378.0
+theme = ExtResource("3_5hkla")
+bbcode_enabled = true
+text = "BAR"
+
+[node name="maker" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 187.0
+offset_right = 1905.0
+offset_bottom = 506.0
+theme = ExtResource("3_5hkla")
+bbcode_enabled = true
+text = "MAKER"
+fit_content = true
+
+[node name="Glass" type="Sprite2D" parent="."]
+position = Vector2(770, 258)
+rotation = 0.0523184
+texture = ExtResource("4_hv50r")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

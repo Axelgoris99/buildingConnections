@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cuqwq507yae8h"]
+
+[ext_resource type="FontFile" uid="uid://6l7joqvfffct" path="res://UI/fonts/BARTOK.ttf" id="1_dse1n"]
+
+[resource]
+default_font = ExtResource("1_dse1n")
+default_font_size = 250
+Subtitle/base_type = &"RichTextLabel"
+Subtitle/font_sizes/normal_font_size = 106
