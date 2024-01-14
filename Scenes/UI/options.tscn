@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b62vpfldsxygk"]
+[gd_scene load_steps=4 format=3 uid="uid://b62vpfldsxygk"]
 
 [ext_resource type="Script" path="res://Scripts/options.gd" id="1_3btsd"]
+[ext_resource type="Theme" uid="uid://dld6bm6h35xsv" path="res://UI/theme.tres" id="1_784us"]
+[ext_resource type="Theme" uid="uid://cuqwq507yae8h" path="res://UI/style/title.tres" id="3_iy5l7"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -9,7 +11,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_784us")
 script = ExtResource("1_3btsd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -29.0
+offset_right = 2003.0
+offset_bottom = 1171.0
+color = Color(0.0980392, 0.121569, 0.133333, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -18,25 +29,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -165.0
+offset_left = -247.0
 offset_top = -20.0
-offset_right = 165.0
-offset_bottom = 79.0
+offset_right = 419.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_784us")
 text = "Did you really think we had time for options?"
 
 [node name="Button" type="Button" parent="RichTextLabel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.431818
-anchor_top = 0.776978
-anchor_right = 0.568182
-anchor_bottom = 1.0
+anchor_left = 0.345455
+anchor_top = 0.59375
+anchor_right = 0.8
+anchor_bottom = 0.89375
 grow_horizontal = 2
 grow_vertical = 0
 text = "Back
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 66.0
+offset_right = 777.0
+offset_bottom = 241.0
+theme = ExtResource("3_iy5l7")
+theme_type_variation = &"Subtitle"
+text = "OPTIONS"
 
 [connection signal="pressed" from="RichTextLabel/Button" to="." method="_on_button_pressed"]

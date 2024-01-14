@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j5ci5f5i0l8j"
-path="res://.godot/imported/glass.png-f65f5a1a860d5a457471170d2e4df78b.ctex"
+uid="uid://utpfgv8q8iii"
+path="res://.godot/imported/particles_flipbook_example.webp-c686e2a2923d1bf0b5c798bc2a939166.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/glass.png"
-dest_files=["res://.godot/imported/glass.png-f65f5a1a860d5a457471170d2e4df78b.ctex"]
+source_file="res://UI/particles_flipbook_example.webp"
+dest_files=["res://.godot/imported/particles_flipbook_example.webp-c686e2a2923d1bf0b5c798bc2a939166.ctex"]
 
 [params]
 
