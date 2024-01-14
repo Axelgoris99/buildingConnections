@@ -1568,7 +1568,7 @@ transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 0, 0, -1.09272)
 [node name="stool2" parent="bar_scene" instance=ExtResource("2_qrs6c")]
 transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 2, 0, -1.09272)
 
-[node name="bar" parent="bar_scene" instance=ExtResource("3_i2dr5")]
+[node name="bar2" parent="bar_scene" instance=ExtResource("3_i2dr5")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.52755, 0, -2.39853)
 
 [node name="Table1" parent="bar_scene" instance=ExtResource("4_ifxdx")]

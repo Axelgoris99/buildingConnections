@@ -33,9 +33,14 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 directories/dch_directory={
 "Axel": "res://dialogs/Axel.dch",
 "barman": "res://dialogs/barman.dch",
+"biker": "res://dialogs/biker.dch",
+"firefighter": "res://dialogs/firefighter.dch",
+"gamergirl": "res://dialogs/gamergirl.dch",
+"hotdog": "res://dialogs/hotdog.dch",
 "pirate": "res://dialogs/pirate.dch"
 }
 directories/dtl_directory={
+"level1": "res://dialogs/level1.dtl",
 "timeline_test": "res://dialogs/timeline_test.dtl",
 "tutorial": "res://dialogs/tutorial.dtl"
 }
