@@ -5,6 +5,7 @@ func enter(_msg := {}) -> void:
 	score_csv()
 	handle_taste_characters()
 	handle_dialog_manager()
+	add_pause_option()
 	state_machine.transition_to("idle")
 
 func score_csv():
@@ -28,3 +29,8 @@ func handle_dialog_manager():
 	node.add_to_group("managers")
 	add_child(node)
 	
+func add_pause_option():
+	var node = preload("res://Scenes/UI/pause_menu.tscn").instantiate()
+	node.set_name("PauseMenu")
+	node.add_to_group("managers")
+	add_child(node) 

@@ -2,17 +2,22 @@
 extends State
 
 var current_character: Node3D
+var hover_menu: Node
+
 var chairs
 var current_chair: Node3D
 
 var highlightMaterial: ShaderMaterial
 var hoverMaterial: ShaderMaterial 
 
+
 # Upon entering the state, we set the Player node's velocity to zero.
 func enter(_msg := {}) -> void:
 	if !_msg.has("character"):
 		state_machine.transition_to("idle")
 		return
+	if _msg.has("hover_menu"):
+		hover_menu = _msg.hover_menu
 	current_character = _msg.character
 	highlightMaterial = load("res://Materials/outlineHover.tres")
 	hoverMaterial = load("res://Materials/outlineSelect.tres")
@@ -23,6 +28,7 @@ func enter(_msg := {}) -> void:
 	highlight_chairs()
 
 func exit():
+	hover_menu.queue_free()
 	disconnect_chairs()
 	unhighlight_chairs()
 	var material = current_character.get_node("StaticBody/AnimatedChar/Armature/Skeleton3D/Mesh") as MeshInstance3D

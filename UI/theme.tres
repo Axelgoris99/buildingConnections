@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dld6bm6h35xsv"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dld6bm6h35xsv"]
 
 [ext_resource type="StyleBox" uid="uid://daqf1ksrug2pi" path="res://UI/style/new_style_box_flat.tres" id="1_eoq1h"]
 
@@ -38,6 +38,11 @@ expand_margin_left = 5.0
 shadow_size = 1
 shadow_offset = Vector2(0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agnmw"]
+bg_color = Color(0.0980392, 0.121569, 0.133333, 1)
+border_width_left = 3
+corner_radius_top_right = 20
+
 [resource]
 Button/colors/font_color = Color(0.968627, 0.937255, 0.780392, 1)
 Button/colors/font_disabled_color = Color(0.180392, 0.211765, 0.215686, 0.501961)
@@ -47,5 +52,6 @@ Button/styles/focus = SubResource("StyleBoxFlat_swsif")
 Button/styles/hover = SubResource("StyleBoxFlat_r2gtv")
 Button/styles/normal = SubResource("StyleBoxFlat_jiw87")
 Button/styles/pressed = SubResource("StyleBoxFlat_blt43")
+Panel/styles/panel = SubResource("StyleBoxFlat_agnmw")
 RichTextLabel/colors/default_color = Color(0.968627, 0.937255, 0.780392, 1)
 RichTextLabel/font_sizes/normal_font_size = 30

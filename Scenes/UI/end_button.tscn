@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dat1fyh2vgs8j"]
+
+[ext_resource type="Theme" uid="uid://dld6bm6h35xsv" path="res://UI/theme.tres" id="1_h0ffl"]
+
+[node name="EndButton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 99.0
+offset_right = -1743.0
+offset_bottom = -925.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_h0ffl")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_right = 135.0
+offset_bottom = 57.0
+text = "Finish"
