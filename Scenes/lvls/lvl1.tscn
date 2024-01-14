@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://bl1uvk26gmqh6"]
 
-[ext_resource type="PackedScene" uid="uid://cwfffe30prtp" path="res://Scenes/prefabs/room.tscn" id="1_hf2nn"]
-[ext_resource type="PackedScene" uid="uid://bge4vo1mf77fu" path="res://Scenes/prefabs/stool.tscn" id="2_e7ouk"]
+[ext_resource type="PackedScene" path="res://Scenes/prefabs/room.tscn" id="1_hf2nn"]
+[ext_resource type="PackedScene" uid="uid://c7fsorjbrd5g2" path="res://Scenes/prefabs/stool.tscn" id="2_e7ouk"]
 [ext_resource type="PackedScene" uid="uid://bhj08y55qkfvk" path="res://Scenes/prefabs/chair.tscn" id="2_ghek1"]
 [ext_resource type="PackedScene" uid="uid://ddklrojam1nhn" path="res://Imported/bar.glb" id="3_ku3v0"]
-[ext_resource type="PackedScene" uid="uid://dx25g184jjak3" path="res://Imported/table.glb" id="4_dpt4e"]
+[ext_resource type="PackedScene" uid="uid://bcdu5thpxphae" path="res://Scenes/prefabs/table.tscn" id="4_6nleg"]
 [ext_resource type="PackedScene" uid="uid://c5w3yaecmv3we" path="res://Scenes/prefabs/Characters/firefighter.tscn" id="6_2f4wv"]
 [ext_resource type="PackedScene" uid="uid://b6rk0ghiesos0" path="res://Scenes/prefabs/state_machine.tscn" id="6_i0e4g"]
 [ext_resource type="PackedScene" uid="uid://cn6s11yc2s8fm" path="res://Scenes/prefabs/Characters/hotdog.tscn" id="7_mshho"]
@@ -35,22 +35,22 @@ transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 4, 0, -2)
 [node name="bar" parent="bar_scene" instance=ExtResource("3_ku3v0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52755, 0, -2.96993)
 
-[node name="Table" parent="bar_scene" instance=ExtResource("4_dpt4e")]
+[node name="Table1" parent="bar_scene" instance=ExtResource("4_6nleg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20562, 0, 2.98738)
+
+[node name="Chair" parent="bar_scene/Table1" instance=ExtResource("2_ghek1")]
+transform = Transform3D(-1, 0, -7.15493e-08, 0, 1, 0, 7.15493e-08, 0, -1, 0, 0, 1.1501)
+
+[node name="Chair2" parent="bar_scene/Table1" instance=ExtResource("2_ghek1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.30651)
+
+[node name="Table" parent="bar_scene" instance=ExtResource("4_6nleg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14917, 0, 2.98738)
 
 [node name="Chair" parent="bar_scene/Table" instance=ExtResource("2_ghek1")]
 transform = Transform3D(-1, 0, -7.15493e-08, 0, 1, 0, 7.15493e-08, 0, -1, 0, 0, 1.1501)
 
 [node name="Chair2" parent="bar_scene/Table" instance=ExtResource("2_ghek1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.30651)
-
-[node name="Table2" parent="bar_scene" instance=ExtResource("4_dpt4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14917, 0, 2.98738)
-
-[node name="Chair" parent="bar_scene/Table2" instance=ExtResource("2_ghek1")]
-transform = Transform3D(-1, 0, -7.15493e-08, 0, 1, 0, 7.15493e-08, 0, -1, 0, 0, 1.1501)
-
-[node name="Chair2" parent="bar_scene/Table2" instance=ExtResource("2_ghek1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.30651)
 
 [node name="Characters" type="Node3D" parent="."]
