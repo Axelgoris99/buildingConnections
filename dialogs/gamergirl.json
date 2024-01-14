@@ -1,0 +1,27 @@
+{
+  "character": "gamergirl",
+  "intro": [
+	{
+	  "value": "Oh, hi!"
+	},
+	{
+	  "value": "Hi, nice to meet you!"
+	}
+  ],
+  "likes": [
+	{
+	  "object": "cat",
+	  "text": "Leveling up in games is cool, but you know what's even cooler? Chillin' with my [color=green]cat[/color] – the real MVP of my gaming adventures!"
+	},	
+	{
+	  "object": "boardgames",
+	  "text": "Love diving into [color=green]boardgames[/color] – the strategic plays, the laughs with friends, it's my kind of fun! Always up for the next tabletop adventure."
+	}
+  ],
+  "dislikes": [
+	{
+	  "object": "beer",
+	  "text": "No [color=red]beer[/color] for me – just a cozy setup, my feline friend, and a whole lot of virtual victories."
+	}
+  ]
+}

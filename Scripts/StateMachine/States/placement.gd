@@ -21,7 +21,7 @@ func enter(_msg := {}) -> void:
 	current_character = _msg.character
 	highlightMaterial = load("res://Materials/outlineHover.tres")
 	hoverMaterial = load("res://Materials/outlineSelect.tres")
-	var material = current_character.get_node("StaticBody/Mesh") as MeshInstance3D
+	var material = current_character.get_node("StaticBody/AnimatedChar/Armature/Skeleton3D/Mesh") as MeshInstance3D
 	material.material_overlay = hoverMaterial
 	chairs = get_tree().get_nodes_in_group("chairs")
 	connect_chairs()
@@ -31,7 +31,7 @@ func exit():
 	hover_menu.queue_free()
 	disconnect_chairs()
 	unhighlight_chairs()
-	var material = current_character.get_node("StaticBody/Mesh") as MeshInstance3D
+	var material = current_character.get_node("StaticBody/AnimatedChar/Armature/Skeleton3D/Mesh") as MeshInstance3D
 	material.material_overlay = null
 	current_chair = null
 	current_character = null
@@ -47,6 +47,7 @@ func handle_input(event):
 func place_character():
 	current_character.remove_chair()
 	current_character.global_position = current_chair.global_position
+	current_character.rotate_y(current_chair.global_rotation.y - current_character.global_rotation.y)
 	current_character.set_chair(current_chair)
 	state_machine.transition_to("idle")
 

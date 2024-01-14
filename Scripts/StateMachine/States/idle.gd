@@ -33,7 +33,7 @@ func transition_to_end():
 	
 func on_character_hovered(character: Node3D):
 	_character = character
-	var material = character.get_node("StaticBody/Mesh") as MeshInstance3D
+	var material = character.get_node("StaticBody/AnimatedChar/Armature/Skeleton3D/Mesh") as MeshInstance3D
 	hover_menu = hover_template.instantiate()
 	hover_menu.set_character(character)	
 	add_child(hover_menu)
@@ -41,7 +41,7 @@ func on_character_hovered(character: Node3D):
 	
 func on_character_unhovered(character: Node3D):
 	_character = null
-	var material = character.get_node("StaticBody/Mesh") as MeshInstance3D
+	var material = character.get_node("StaticBody/AnimatedChar/Armature/Skeleton3D/Mesh") as MeshInstance3D
 	if(hover_menu):
 		hover_menu.queue_free()
 	material.material_overlay = null
