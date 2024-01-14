@@ -24,7 +24,6 @@ func calculate_total_score():
 	var tables = get_tables()
 	for table in tables:
 		final_score += calculate_score_per_table(table)
-	print(final_score)
 
 func get_tables():
 	return get_tree().get_nodes_in_group("tables")
@@ -55,7 +54,7 @@ func calculate_score_per_table(table):
 func calculate_similar(a, b):
 	var indexA = score_node.find_index_object(a)
 	var indexB = score_node.find_index_object(b)
-	if indexA < indexB:
+	if indexA > indexB:
 		return score_node.score_grid[indexA][indexB]
 	else:
 		return score_node.score_grid[indexB][indexA]
@@ -65,7 +64,7 @@ func calculate_similar(a, b):
 func calculate_different(a,b):
 	var indexA = score_node.find_index_object(a)
 	var indexB = score_node.find_index_object(b)
-	if indexA < indexB:
+	if indexA > indexB:
 		return -score_node.score_grid[indexB][indexA]
 	else:
 		return -score_node.score_grid[indexA][indexB]

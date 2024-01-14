@@ -9,6 +9,8 @@ var hover_menu: Node
 
 var end_button: Node
 
+
+
 # Upon entering the state, we set the Player node's velocity to zero.
 func enter(_msg := {}) -> void:
 	if !end_button:

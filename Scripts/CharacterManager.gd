@@ -35,6 +35,7 @@ func init_character(character : Character, character_name : String):
 			character.dislikes_dialog_events = dislikes_dialog_events
 			character.likes = likes
 			character.dislikes = dislikes
+			character.display_name = data_received["character"]
 
 		else:
 			print("Unexpected data of type ", typeof(data_received))

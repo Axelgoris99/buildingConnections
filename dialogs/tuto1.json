@@ -1,0 +1,23 @@
+{
+  "character": "Tic",
+  "intro": [
+	{
+	  "value": "Hello there!"
+	},
+	{
+	  "value": "Nice to meet you!"
+	}
+  ],
+  "likes": [
+	{
+	  "object": "boardgames",
+	  "text": "I am fond of [color=green] boardgames[/color]. I'm trying to develop one by the way!"
+	}
+  ],
+  "dislikes": [
+	{
+	  "object": "beer",
+	  "text": "I hate [color=red]beer[/color]. You can't imagine how many times I've been drunk!"
+	}
+  ]
+}
