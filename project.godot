@@ -10,10 +10,17 @@ config_version=5
 
 [application]
 
-config/name="buildingConnections"
-run/main_scene="res://Scenes/prefabs/dialog_manager.tscn"
+config/name="Bar Maker"
+config/description="Welcome to Bar Maker
+🍹 Craft Connections, Create Memories!
+Dive into the vibrant world of Bar Maker, where you're not just mixing drinks, but blending personalities! In this isometric low poly adventure, your mission is to unite people through shared interests, creating the ultimate recipe for a memorable evening."
+config/version="1.0.0.0"
+run/main_scene="res://Scenes/UI/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/image="res://UI/splashScreen.png"
+config/icon="res://UI/icon.ico"
+config/windows_native_icon="res://UI/icon.ico"
 
 [autoload]
 
@@ -55,6 +62,7 @@ text/autopauses={}
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
