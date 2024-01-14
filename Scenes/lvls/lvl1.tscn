@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bl1uvk26gmqh6"]
+[gd_scene load_steps=19 format=3 uid="uid://bl1uvk26gmqh6"]
 
-[ext_resource type="PackedScene" path="res://Scenes/prefabs/room.tscn" id="1_hf2nn"]
-[ext_resource type="PackedScene" path="res://Scenes/prefabs/stool.tscn" id="2_e7ouk"]
+[ext_resource type="PackedScene" uid="uid://b8rfecqjnv4u2" path="res://Scenes/prefabs/room.tscn" id="1_hf2nn"]
+[ext_resource type="PackedScene" uid="uid://c7fsorjbrd5g2" path="res://Scenes/prefabs/stool.tscn" id="2_e7ouk"]
 [ext_resource type="PackedScene" uid="uid://bhj08y55qkfvk" path="res://Scenes/prefabs/chair.tscn" id="2_ghek1"]
-[ext_resource type="PackedScene" uid="uid://ddklrojam1nhn" path="res://Imported/bar.glb" id="3_ku3v0"]
-[ext_resource type="PackedScene" path="res://Scenes/prefabs/table.tscn" id="4_6nleg"]
+[ext_resource type="PackedScene" uid="uid://bcdu5thpxphae" path="res://Scenes/prefabs/table.tscn" id="4_6nleg"]
 [ext_resource type="PackedScene" uid="uid://c5w3yaecmv3we" path="res://Scenes/prefabs/Characters/firefighter.tscn" id="6_2f4wv"]
 [ext_resource type="PackedScene" uid="uid://b6rk0ghiesos0" path="res://Scenes/prefabs/state_machine.tscn" id="6_i0e4g"]
 [ext_resource type="PackedScene" uid="uid://cn6s11yc2s8fm" path="res://Scenes/prefabs/Characters/hotdog.tscn" id="7_mshho"]
@@ -1557,29 +1556,26 @@ _data = {
 [node name="Lvl1" type="Node3D"]
 
 [node name="bar_scene" parent="." instance=ExtResource("1_hf2nn")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 2.0732)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 2)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="bar_scene"]
-transform = Transform3D(0.883224, -0.178085, 0.433823, 0.106814, 0.977168, 0.183666, -0.456626, -0.11588, 0.88208, 0, 1.27379, 5.34322)
+transform = Transform3D(1.76645, -0.356169, 0.867644, 0.213628, 1.95434, 0.367331, -0.91325, -0.23176, 1.76416, 0, 1.27379, 5.48962)
 shadow_enabled = true
 
 [node name="stool" parent="bar_scene" instance=ExtResource("2_e7ouk")]
-transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 0, 0, -1.09272)
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 0, 0, -0.94632)
 
 [node name="stool4" parent="bar_scene" instance=ExtResource("2_e7ouk")]
-transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -2, 0, -1.09272)
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -2, 0, -0.94632)
 
 [node name="stool2" parent="bar_scene" instance=ExtResource("2_e7ouk")]
-transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 2, 0, -1.09272)
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 2, 0, -0.94632)
 
 [node name="stool3" parent="bar_scene" instance=ExtResource("2_e7ouk")]
-transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 4, 0, -1.09272)
-
-[node name="bar" parent="bar_scene" instance=ExtResource("3_ku3v0")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.52755, 0, -2.39853)
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 4, 0, -0.94632)
 
 [node name="Table1" parent="bar_scene" instance=ExtResource("4_6nleg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20562, 0, 2.98738)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20562, 0, 3.13378)
 
 [node name="Chair" parent="bar_scene/Table1" instance=ExtResource("2_ghek1")]
 transform = Transform3D(-1, 0, -7.15493e-08, 0, 1, 0, 7.15493e-08, 0, -1, 0, 0, 1.1501)
@@ -1588,7 +1584,7 @@ transform = Transform3D(-1, 0, -7.15493e-08, 0, 1, 0, 7.15493e-08, 0, -1, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.30651)
 
 [node name="Table" parent="bar_scene" instance=ExtResource("4_6nleg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14917, 0, 2.98738)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14917, 0, 3.13378)
 
 [node name="Chair" parent="bar_scene/Table" instance=ExtResource("2_ghek1")]
 transform = Transform3D(-1, 0, -7.15493e-08, 0, 1, 0, 7.15493e-08, 0, -1, 0, 0, 1.1501)
