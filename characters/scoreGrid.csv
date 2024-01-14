@@ -1,7 +1,10 @@
-object;rhum;banana;parrot;coconut; sharks
-rhum;100;25;50;25;75
-banana;75;100;0;0;0
-parrot;25;0;100;0;0
-coconut;75;80;0;100;0
-sharks;-50;0;0;0;100
-
+object;rhum;banana;parrot;coconut;sharks;cat;dog;beer;boardgames
+rhum;100;25;50;25;75;0;0;75;0
+banana;75;100;0;0;0;0;0;0;0
+parrot;25;0;100;0;0;25;25;25;0
+coconut;75;80;0;100;0;0;0;0;0
+sharks;50;0;0;0;100;0;25;0;0
+cat;0;0;25;0;25;100;75;0;0
+dog;0;0;25;0;25;75;100;0;0
+beer;75;0;25;0;0;0;0;100;50
+boardgames;0;0;0;0;0;0;0;50;100
